@@ -1,20 +1,14 @@
-package BasicWebService;
+package BasicWebServices;
 
 /**
- * Created by RXC8414 on 4/11/2017.
+ * Created by RXC8414 on 4/12/2017.
  */
-public class NewGreeting {
+public class Greeting {
     private long id;
     private String strMessage;
 
-    public NewGreeting(){}
-
-
-    public void setId(long id) {
+    public Greeting(long id, String strMessage) {
         this.id = id;
-    }
-
-    public void setStrMessage(String strMessage) {
         this.strMessage = strMessage;
     }
 
