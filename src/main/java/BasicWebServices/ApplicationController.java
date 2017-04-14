@@ -146,9 +146,11 @@ public class ApplicationController {
 
     // Day 4: Creating a nested JSON response
     @RequestMapping(
-            value = "/students/associates",
+            value = "/students",
             method = RequestMethod.GET)
     public ResponseEntity<Students> getStudents(){
+
+        //Setup Associates class with values
         Map<String,String> map = new HashMap<>();
         Associates associates = new Associates();
         associates.setInstructor("Rolando Colon");
@@ -158,17 +160,19 @@ public class ApplicationController {
         map.put("Kinnari","Associate");
         map.put("Jay","Associate");
         map.put("Kimberly","Associate");
+        map.put("Sandhya","Associate");
         associates.setAssociates(map);
 
+        // Setup Contractors Class
         Map<String,String> map2 = new HashMap<>();
         Contractors contractors = new Contractors();
-        associates.setInstructor("Rolando Colon");
-        associates.setClassName("SQ Training Pod 1");
-        map2.put("Thomas","Associate");
-        map2.put("JP","Associate");
-        map2.put("Sandhya","Associate");
-        associates.setAssociates(map2);
+        contractors.setInstructor("Rolando Colon");
+        contractors.setClassName("SQ Training Pod 1");
+        map2.put("Thomas","Contractor");
+        map2.put("JP","Contractor");
+        contractors.setContractors(map2);
 
+        // Setup Student Class with above objects
         Students students = new Students();
         students.setAssociates(associates);
         students.setContractors(contractors);
